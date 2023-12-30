@@ -2,14 +2,14 @@ import { Box, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
 import CustomIcon from '../components/CustomIcon';
 
-const Footer = () => {
+const Footer = ({ sectionRef }) => {
   const isMdScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const isMd = useMediaQuery((theme) => theme.breakpoints.only('md'));
   const isSm = useMediaQuery((theme) => theme.breakpoints.only('sm'));
   const isXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
 
   return (
-    <Box>
+    <Box ref={sectionRef}>
       {/* Footer */}
       <Grid
         container
@@ -53,7 +53,6 @@ const Footer = () => {
             display: 'flex',
             flexDirection: isSm || isXs ? 'column' : 'row',
             justifyContent: 'space-between',
-            alignItems: 'center',
             pt: '30px',
             pb: '30px',
             pl: '20px',
@@ -127,7 +126,7 @@ const Footer = () => {
                 fontSize: isMd ? '18px' : isMdScreen ? '22px' : '18px',
                 color: '#242424',
                 mb: '24px',
-                mt: isXs && '30px',
+                mt: isXs ? '30px' : isSm ? '30px' : '',
               }}
             >
               Address{' '}
@@ -140,7 +139,7 @@ const Footer = () => {
                 color: '#4B4B4B',
               }}
             >
-              Narmatha's skin, hair and laser clinic{' '}
+              C - 68, 11th Cross(East)
             </Typography>
             <Typography
               sx={{
@@ -150,7 +149,7 @@ const Footer = () => {
                 color: '#4B4B4B',
               }}
             >
-              No. 15, Narayana Nagar{' '}
+              Opp. Kovai Krishna Sweets
             </Typography>
             <Typography
               sx={{
@@ -160,7 +159,7 @@ const Footer = () => {
                 color: '#4B4B4B',
               }}
             >
-              Pillayar Palayam{' '}
+              Thillainagar
             </Typography>
             <Typography
               sx={{
@@ -170,7 +169,7 @@ const Footer = () => {
                 color: '#4B4B4B',
               }}
             >
-              Dindigul-624001
+              Trichy - 620 018
             </Typography>
           </Box>
           <Box sx={{ textAlign: 'center' }}>
@@ -181,7 +180,7 @@ const Footer = () => {
                 fontSize: isMd ? '18px' : isMdScreen ? '22px' : '18px',
                 color: '#242424',
                 mb: '24px',
-                mt: isXs && '30px',
+                mt: isXs ? '30px' : isSm ? '30px' : '',
               }}
             >
               Contact{' '}
@@ -195,7 +194,7 @@ const Footer = () => {
                 mb: '8px',
               }}
             >
-              Info@example.com{' '}
+              narmathaskinclinic93@gmail.com
             </Typography>
             <Typography
               sx={{
@@ -205,7 +204,7 @@ const Footer = () => {
                 color: '#4B4B4B',
               }}
             >
-              +91 7010620895{' '}
+              +91 9842413722{' '}
             </Typography>
           </Box>
         </Grid>

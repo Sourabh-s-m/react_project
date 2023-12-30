@@ -25,7 +25,13 @@ const Home = () => {
   const isMd = useMediaQuery((theme) => theme.breakpoints.only('md'));
   const isXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
+  const sectionRef = useRef(null);
+
   const navigate = useNavigate();
+
+  const scrollToSection = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const modifiedAnimationData = {
     ...homeAnim,
@@ -39,7 +45,7 @@ const Home = () => {
   return (
     <Box sx={{ minHeight: isMdScreen ? '100vh' : '100dvh' }}>
       {/* Navbar */}
-      <Navbar />
+      <Navbar scrollToSection={scrollToSection} />
 
       <Box
         sx={{
@@ -122,6 +128,7 @@ const Home = () => {
                 fontWeight: 600,
                 border: 0,
               }}
+              onClick={() => scrollToSection()}
             >
               Book
             </Button>
@@ -546,7 +553,7 @@ const Home = () => {
                     textDecoration: 'underline',
                   }}
                 >
-                  +91 7010620895
+                  +91 9842413722
                 </Typography>
               </Grid>
               <Grid
@@ -601,7 +608,7 @@ const Home = () => {
                     color: '#565656',
                   }}
                 >
-                  namrta@clinic.com
+                  narmathaskinclinic93@gmail.com
                 </Typography>
               </Grid>
               <Grid
@@ -616,7 +623,7 @@ const Home = () => {
                 />
               </Grid>
             </Grid>
-            <Grid
+            {/* <Grid
               item
               sx={{
                 display: 'flex',
@@ -654,7 +661,7 @@ const Home = () => {
                     pt: '10px',
                   }}
                 >
-                  Narmatha's skin, Hair and Laser Clinic
+                  C - 68, 11th Cross(East)
                 </Typography>
                 <Typography
                   sx={{
@@ -664,7 +671,7 @@ const Home = () => {
                     color: '#4B4B4B',
                   }}
                 >
-                  No. 15, Narayana Nagar
+                  Opp. Kovai Krishna Sweets
                 </Typography>
                 <Typography
                   sx={{
@@ -674,7 +681,7 @@ const Home = () => {
                     color: '#4B4B4B',
                   }}
                 >
-                  Pillayar Palayam
+                  Thillainagar
                 </Typography>
                 <Typography
                   sx={{
@@ -684,18 +691,17 @@ const Home = () => {
                     color: '#4B4B4B',
                   }}
                 >
-                  Dindigul-624001
+                  Trichy - 620 018
                 </Typography>
               </Box>
               <Box
                 sx={{
                   mt: '20px',
-                  border: '1px solid red',
                   borderRadius: '10px',
                   flexGrow: 1,
                 }}
               ></Box>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
 
@@ -731,147 +737,33 @@ const Home = () => {
             other details
           </Typography>
 
-          <Grid
-            container
-            flexDirection={'row'}
-            justifyContent={'space-between'}
-            sx={{ height: '40vh' }}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}
           >
-            <Grid
-              item
-              md={5.8}
-              display={'flex'}
-              flexDirection={'column'}
+            <Box
               sx={{
-                height: '100%',
-              }}
-            >
-              <Box
-                sx={{
-                  height: '50%',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  borderRadius: '12px',
-                  mb: '20px',
-                  boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.10)',
-                }}
-              >
-                <Box
-                  sx={{
-                    width: '70%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: 'mukta',
-                      fontWeight: 600,
-                      fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
-                      color: '#147F82',
-                    }}
-                  >
-                    Call Us
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: 'mukta',
-                      fontWeight: 500,
-                      fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
-                      color: '#565656',
-                      textDecoration: 'underline',
-                    }}
-                  >
-                    +91 7010620895
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: '30%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'flex-end',
-                  }}
-                >
-                  <CustomIcon
-                    name={'phone'}
-                    style={{ width: '100%', height: '100px' }}
-                    svgStyle={'width: 100%; height: 100px'}
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  height: '50%',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  borderRadius: '12px',
-                  boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.10)',
-                }}
-              >
-                <Box
-                  sx={{
-                    width: '70%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: 'mukta',
-                      fontWeight: 600,
-                      fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
-                      color: '#147F82',
-                    }}
-                  >
-                    Email Us
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: 'mukta',
-                      fontWeight: 500,
-                      fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
-                      color: '#565656',
-                    }}
-                  >
-                    namrta@clinic.com
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: '30%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'flex-end',
-                  }}
-                >
-                  <CustomIcon
-                    name={'post'}
-                    style={{ width: '100%', height: '100px' }}
-                    svgStyle={'width: 100%; height: 100px'}
-                  />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid
-              item
-              md={6}
-              sx={{
-                height: '100%',
+                height: '217px',
+                display: 'flex',
+                flexDirection: 'row',
                 borderRadius: '12px',
-                p: '20px',
+                mb: '20px',
                 boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.10)',
+                width: '49%',
               }}
-              display={'flex'}
-              flexDirection={'column'}
             >
-              <Box>
+              <Box
+                sx={{
+                  width: '70%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
                 <Typography
                   sx={{
                     fontFamily: 'mukta',
@@ -880,60 +772,93 @@ const Home = () => {
                     color: '#147F82',
                   }}
                 >
-                  Our Address
+                  Call Us
                 </Typography>
                 <Typography
                   sx={{
                     fontFamily: 'mukta',
                     fontWeight: 500,
-                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                    color: '#4B4B4B',
+                    fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
+                    color: '#565656',
+                    textDecoration: 'underline',
                   }}
                 >
-                  Narmatha's skin, Hair and Laser Clinic
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: 'mukta',
-                    fontWeight: 500,
-                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                    color: '#4B4B4B',
-                  }}
-                >
-                  No. 15, Narayana Nagar
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: 'mukta',
-                    fontWeight: 500,
-                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                    color: '#4B4B4B',
-                  }}
-                >
-                  Pillayar Palayam
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: 'mukta',
-                    fontWeight: 500,
-                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                    color: '#4B4B4B',
-                  }}
-                >
-                  Dindigul-624001
+                  +91 9842413722
                 </Typography>
               </Box>
               <Box
                 sx={{
-                  width: '100%',
-                  border: '1px solid orange',
-                  mt: '20px',
-                  flexGrow: 1,
-                  borderRadius: '10px',
+                  width: '30%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'flex-end',
                 }}
-              ></Box>
-            </Grid>
-          </Grid>
+              >
+                <CustomIcon
+                  name={'phone'}
+                  style={{ width: '100%', height: '100px' }}
+                  svgStyle={'width: 100%; height: 100px'}
+                />
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                borderRadius: '12px',
+                boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.10)',
+                height: '217px',
+                width: '49%',
+              }}
+            >
+              <Box
+                sx={{
+                  width: '70%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 600,
+                    fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
+                    color: '#147F82',
+                  }}
+                >
+                  Email Us
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '16px' : isMdScreen ? '20px' : '18px',
+                    color: '#565656',
+                  }}
+                >
+                  narmathaskinclinic93@gmail.com
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: '30%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'flex-end',
+                }}
+              >
+                <CustomIcon
+                  name={'post'}
+                  style={{ width: '100%', height: '100px' }}
+                  svgStyle={'width: 100%; height: 100px'}
+                />
+              </Box>
+            </Box>
+          </Box>
         </Grid>
       </Box>
       {/* Footer */}
@@ -1177,7 +1102,7 @@ const Home = () => {
           />
         </Grid>
       </Grid> */}
-      <Footer />
+      <Footer sectionRef={sectionRef} />
     </Box>
   );
 };

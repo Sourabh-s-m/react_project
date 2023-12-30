@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Navbar from './navbar/Navbar';
 import Footer from './Footer';
 import CustomIcon from '../components/CustomIcon';
@@ -11,6 +11,12 @@ const Services = () => {
   const isMdScreenOnly = useMediaQuery(
     '(min-width:900px) and (max-width:1200px)'
   );
+
+  const sectionRef = useRef(null);
+
+  const scrollToSection = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -25,7 +31,7 @@ const Services = () => {
       >
         {/* Services */}
         <Box>
-          <Navbar />
+          <Navbar scrollToSection={scrollToSection} />
         </Box>
 
         {/* Our Services Text Box */}
@@ -2492,7 +2498,7 @@ const Services = () => {
           </Grid>
         )}
       </Box>
-      <Footer />
+      <Footer sectionRef={sectionRef} />
     </>
   );
 };

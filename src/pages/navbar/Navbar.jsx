@@ -15,7 +15,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection }) => {
   const isMdScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const location = useLocation();
   const navigate = useNavigate();
@@ -111,6 +111,7 @@ const Navbar = () => {
                     fontFamily: 'mukta',
                     fontSize: '20px',
                   }}
+                  onClick={() => scrollToSection()}
                 >
                   Contact us
                 </Button>
@@ -198,6 +199,23 @@ const Navbar = () => {
                 sx={{
                   color:
                     location.pathname === '/gallery' ? '#147F82' : '#414141',
+                  fontWeight: '900',
+                  cursor: 'pointer',
+                  fontSize: '16px',
+                }}
+              />
+            </ListItemButton>
+
+            <ListItemButton
+              onClick={() => {
+                setDialogOpen(false);
+                scrollToSection();
+              }}
+            >
+              <ListItemText
+                primary='Contact Us'
+                sx={{
+                  color: '#414141',
                   fontWeight: '900',
                   cursor: 'pointer',
                   fontSize: '16px',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Navbar from './navbar/Navbar';
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import Footer from './Footer';
@@ -8,6 +8,12 @@ const Gallery = () => {
   const isMdScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const isMd = useMediaQuery((theme) => theme.breakpoints.only('md'));
   const isXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
+  const sectionRef = useRef(null);
+
+  const scrollToSection = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -20,7 +26,7 @@ const Gallery = () => {
         }}
       >
         <Box sx={{ flexGrow: 1 }}>
-          <Navbar />
+          <Navbar scrollToSection={scrollToSection} />
           <Box
             sx={{
               pt: isXs ? '100px' : '40px',
@@ -234,7 +240,7 @@ const Gallery = () => {
         </Box>
       </Box>
       <Box sx={{}}>
-        <Footer />
+        <Footer sectionRef={sectionRef} />
       </Box>
     </>
   );
