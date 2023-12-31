@@ -61,6 +61,9 @@ import galleryFlower from '../../src/images/svgs/galleryFlower.svg';
 import threeG from '../../src/images/svgs/threeG.svg';
 import oneBefore from '../../src/images/svgs/oneBefore.svg';
 import oneAfter from '../../src/images/svgs/oneAfter.svg';
+import nnn from '../../src/images/svgs/nnn.svg';
+import before1 from '../../src/images/svgs/before1.svg';
+import after1 from '../../src/images/svgs/after1.svg';
 
 const createIcon = ({
   style,
@@ -98,6 +101,30 @@ const CustomIcon = ({
   const theme = useTheme();
 
   const light = {
+    after1: createIcon({
+      src: after1,
+      style,
+      className,
+      svgStyle,
+      onClick,
+      color,
+    }),
+    before1: createIcon({
+      src: before1,
+      style,
+      className,
+      svgStyle,
+      onClick,
+      color,
+    }),
+    nnn: createIcon({
+      src: nnn,
+      style,
+      className,
+      svgStyle,
+      onClick,
+      color,
+    }),
     oneAfter: createIcon({
       src: oneAfter,
       style,

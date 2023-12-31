@@ -24,6 +24,7 @@ const Home = () => {
   const isMdScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const isMd = useMediaQuery((theme) => theme.breakpoints.only('md'));
   const isXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isSm = useMediaQuery((theme) => theme.breakpoints.only('sm'));
 
   const sectionRef = useRef(null);
 
@@ -322,9 +323,13 @@ const Home = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                cursor: 'pointer',
               }}
               md={4}
               p={1}
+              onClick={() => {
+                navigate('/services');
+              }}
             >
               <CustomIcon
                 name={'clinicalDerma'}
@@ -351,8 +356,10 @@ const Home = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                cursor: 'pointer',
               }}
               p={1}
+              onClick={() => navigate('/services')}
             >
               <CustomIcon
                 name={'interThera'}
@@ -379,8 +386,10 @@ const Home = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                cursor: 'pointer',
               }}
               p={1}
+              onClick={() => navigate('/services')}
             >
               <CustomIcon
                 name={'skinReju'}
@@ -606,6 +615,9 @@ const Home = () => {
                     fontWeight: 500,
                     fontSize: '14px',
                     color: '#565656',
+                    wordBreak: 'break-word',
+                    pl: (isXs || isSm) && '10px',
+                    textAlign: 'center',
                   }}
                 >
                   narmathaskinclinic93@gmail.com

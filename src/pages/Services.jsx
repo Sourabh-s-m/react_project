@@ -393,7 +393,7 @@ const Services = () => {
                   fontSize: '18px',
                 }}
               >
-                Dermatol Surgery{' '}
+                Dermatosurgery{' '}
               </Typography>
             </Box>
           </Grid>
@@ -457,7 +457,7 @@ const Services = () => {
               fontSize: '28px',
             }}
           >
-            Dermatol Surgery{' '}
+            Dermatosurgery{' '}
           </Typography>
         )}
 
@@ -2243,7 +2243,7 @@ const Services = () => {
               }}
             >
               <CustomIcon
-                name={'skinCorn'}
+                name={'wartRemoval'}
                 style={{
                   width: '100%',
                   height: '160px',
@@ -2373,10 +2373,11 @@ const Services = () => {
                 alignItems: 'center',
                 justifyContent: 'flex-end',
                 position: 'relative',
+                border: '1px solid red',
               }}
             >
               <CustomIcon
-                name={'wartRemoval'}
+                name={'nnn'}
                 style={{
                   width: '100%',
                   height: '160px',

@@ -7,6 +7,7 @@ const Footer = ({ sectionRef }) => {
   const isMd = useMediaQuery((theme) => theme.breakpoints.only('md'));
   const isSm = useMediaQuery((theme) => theme.breakpoints.only('sm'));
   const isXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
+  const belowMd = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
     <Box ref={sectionRef}>
@@ -52,6 +53,7 @@ const Footer = ({ sectionRef }) => {
           sx={{
             display: 'flex',
             flexDirection: isSm || isXs ? 'column' : 'row',
+            alignItems: isSm || isXs ? 'center' : '',
             justifyContent: 'space-between',
             pt: '30px',
             pb: '30px',
@@ -77,7 +79,7 @@ const Footer = ({ sectionRef }) => {
                 fontFamily: 'mukta',
                 fontWeight: 500,
                 fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                color: '#4B4B4B',
+                color: '#373737',
                 mb: '8px',
               }}
             >
@@ -118,7 +120,7 @@ const Footer = ({ sectionRef }) => {
               </Typography>
             </Box>
           </Box>
-          <Box sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: belowMd && 'center' }}>
             <Typography
               sx={{
                 fontFamily: 'mukta',
@@ -131,46 +133,122 @@ const Footer = ({ sectionRef }) => {
             >
               Address{' '}
             </Typography>
-            <Typography
+            <Box
               sx={{
-                fontFamily: 'mukta',
-                fontWeight: 500,
-                fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                color: '#4B4B4B',
+                display: 'flex',
+                flexDirection: belowMd ? 'column' : 'row',
+                alignItems: 'center',
               }}
             >
-              C - 68, 11th Cross(East)
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: 'mukta',
-                fontWeight: 500,
-                fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                color: '#4B4B4B',
-              }}
-            >
-              Opp. Kovai Krishna Sweets
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: 'mukta',
-                fontWeight: 500,
-                fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                color: '#4B4B4B',
-              }}
-            >
-              Thillainagar
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: 'mukta',
-                fontWeight: 500,
-                fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
-                color: '#4B4B4B',
-              }}
-            >
-              Trichy - 620 018
-            </Typography>
+              <Box>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#373737',
+                    mb: '8px',
+                  }}
+                >
+                  Branch 1
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  C - 68, 11th Cross(East)
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  Opp. Kovai Krishna Sweets
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  Thillainagar
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  Trichy - 620 018
+                </Typography>
+              </Box>
+
+              <Box sx={{ ml: !belowMd && '40px' }}>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#373737',
+                    mb: '8px',
+                    mt: belowMd && '20px',
+                  }}
+                >
+                  Branch 2
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  Narmatha's skin, hair and laser clinic{' '}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  No. 15, Narayana Nagar{' '}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  Pillayar Palayam{' '}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'mukta',
+                    fontWeight: 500,
+                    fontSize: isMd ? '14px' : isMdScreen ? '18px' : '14px',
+                    color: '#4B4B4B',
+                  }}
+                >
+                  Dindigul-624001{' '}
+                </Typography>
+              </Box>
+            </Box>
           </Box>
           <Box sx={{ textAlign: 'center' }}>
             <Typography

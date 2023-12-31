@@ -3,6 +3,14 @@ import Navbar from './navbar/Navbar';
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import Footer from './Footer';
 import CustomIcon from '../components/CustomIcon';
+import before11 from '../../src/images/pngs/before11.png';
+import after11 from '../../src/images/pngs/after11.png';
+import before22 from '../../src/images/pngs/before22.png';
+import after22 from '../../src/images/pngs/after22.png';
+import before33 from '../../src/images/pngs/before33.png';
+import after33 from '../../src/images/pngs/after33.png';
+import before44 from '../../src/images/pngs/before44.png';
+import after44 from '../../src/images/pngs/after44.png';
 
 const Gallery = () => {
   const isMdScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
@@ -97,11 +105,12 @@ const Gallery = () => {
               color: '#4B4B4B',
               fontFamily: 'mukta',
               fontSize: '30px',
+              mb: '60px',
             }}
           >
             Our Client Satisfaction Result
           </Typography>
-          <Grid container justifyContent={'center'}>
+          {/* <Grid container justifyContent={'center'}>
             <Grid item md={5} sx={{}}>
               <Box
                 sx={{
@@ -142,101 +151,163 @@ const Gallery = () => {
                 />
               </Box>
             </Grid>
-          </Grid>
-          {/* <Grid container sx={{ mt: '62px' }} gap={'20px'}>
-            <Grid
-              item
-              md={4}
+          </Grid> */}
+          <Box
+            sx={{
+              display: isXs && 'flex',
+              flexDirection: isXs && 'column',
+              alignItems: isXs && 'center',
+            }}
+          >
+            <Box
               sx={{
-                boxShadow: '0px 0px 15px 0px #0000001A',
-                height: '316px',
-                borderRadius: '19px',
-                p: '18px',
                 display: 'flex',
+                flexDirection: isXs ? 'column' : 'row',
+                justifyContent: 'space-between',
+                alignItems: isXs ? 'center' : '',
+                pb: '18px',
+                width: isXs ? '80%' : '100%',
+                gap: isXs && '20px',
               }}
             >
               <Box
                 sx={{
-                  width: '50%',
-                  border: '1px solid red',
-                  position: 'relative',
+                  width: isXs ? '100%' : '39%',
+                  boxShadow: '0px 0px 10px 0px #0000001A',
                   display: 'flex',
-                  justifyContent: 'center',
+                  justifyContent: 'space-between',
+                  p: '18px',
+                  borderRadius: '20px',
                 }}
               >
-                <CustomIcon
-                  name={'oneBefore'}
-                  style={{ width: '100%', height: '100%' }}
-                />
-                <Typography
+                <Box
                   sx={{
-                    position: 'absolute',
-                    bottom: '0',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    color: '#FFF',
+                    width: '48%',
+                    backgroundImage: `url(${before11})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100% 100%',
+                    backgroundPosition: 'center',
+                    height: '280px',
                   }}
-                >
-                  BEFORE
-                </Typography>
+                ></Box>
+                <Box
+                  sx={{
+                    width: '48%',
+                    backgroundImage: `url(${after11})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100% 100%',
+                    backgroundPosition: 'center',
+                    height: '280px',
+                  }}
+                ></Box>
               </Box>
               <Box
                 sx={{
-                  width: '50%',
-                  border: '1px solid red',
-                  position: 'relative',
+                  width: isXs ? '100%' : '59%',
+                  boxShadow: '0px 0px 10px 0px #0000001A',
                   display: 'flex',
-                  justifyContent: 'center',
+                  justifyContent: 'space-between',
+                  p: '18px',
+                  borderRadius: '20px',
                 }}
               >
-                <CustomIcon
-                  name={'oneAfter'}
-                  style={{ width: '100%', height: '100%' }}
-                />
-                <Typography
+                <Box
                   sx={{
-                    position: 'absolute',
-                    bottom: '0',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    color: '#FFF',
+                    width: '39%',
+                    backgroundImage: `url(${before22})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100% 100%',
+                    backgroundPosition: 'center',
+                    height: '280px',
                   }}
-                >
-                  AFTER{' '}
-                </Typography>
+                ></Box>
+                <Box
+                  sx={{
+                    width: '59%',
+                    backgroundImage: `url(${after22})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100% 100%',
+                    backgroundPosition: 'center',
+                    height: '280px',
+                  }}
+                ></Box>
               </Box>
-            </Grid>
-            <Grid
-              item
-              md={7.8}
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: isXs ? 'column' : 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              gap: isXs && '20px',
+            }}
+          >
+            <Box
               sx={{
-                boxShadow: '0px 0px 15px 0px #0000001A',
-                height: '316px',
-                borderRadius: '19px',
+                width: isXs ? '80%' : '59%',
+                boxShadow: '0px 0px 10px 0px #0000001A',
+                display: 'flex',
+                justifyContent: 'space-between',
                 p: '18px',
+                borderRadius: '20px',
               }}
-            ></Grid>
-            <Grid
-              item
-              md={6.8}
+            >
+              <Box
+                sx={{
+                  width: '49%',
+                  backgroundImage: `url(${before33})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  height: '441px',
+                }}
+              ></Box>
+
+              <Box
+                sx={{
+                  width: '49%',
+                  backgroundImage: `url(${after33})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  height: '441px',
+                }}
+              ></Box>
+            </Box>
+            <Box
               sx={{
-                boxShadow: '0px 0px 15px 0px #0000001A',
-                height: '477px',
-                borderRadius: '19px',
+                width: isXs ? '80%' : '39%',
+                boxShadow: '0px 0px 10px 0px #0000001A',
+                display: 'flex',
+                justifyContent: 'space-between',
                 p: '18px',
+                borderRadius: '20px',
               }}
-            ></Grid>
-            <Grid
-              item
-              md={5}
-              sx={{
-                boxShadow: '0px 0px 15px 0px #0000001A',
-                height: '477px',
-                borderRadius: '19px',
-                p: '18px',
-              }}
-            ></Grid>
-          </Grid> */}
+            >
+              <Box
+                sx={{
+                  width: '48%',
+                  backgroundImage: `url(${before44})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  height: '441px',
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  width: '48%',
+                  backgroundImage: `url(${after44})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  height: '441px',
+                }}
+              ></Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
       <Box sx={{}}>
